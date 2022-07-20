@@ -1,15 +1,5 @@
-from selenium import webdriver 
-import pandas as pd 
-from selenium.webdriver.common.by import By 
-from selenium.webdriver.support.ui import WebDriverWait 
-from selenium.webdriver.support import expected_conditions as EC
-
-from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import requests
-#driver = webdriver.Chrome(ChromeDriverManager().install())
-#wait = WebDriverWait(driver, 10)
-df = pd.DataFrame(columns = ['link', 'title', 'description', 'views', 'likes'])
 
 links =["https://www.youtube.com/watch?v=nqtobIpZt68&ab_channel=%24uicideboy%24"]
 
