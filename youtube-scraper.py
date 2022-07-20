@@ -24,9 +24,15 @@ def scrape(url):
     title = title[:-10] #remove ' - YouTube'
     #likes    
     l = st.index("likes")
-    likes = st[l-11:l-1]
+    likes = st[l-15:l-1]
     q = likes.index('"')
-    likes = likes[q+1:].translate(str.maketrans('', '', ','))
+    while True:
+        likes = likes[q+1:]
+        try:
+            q = likes.index('"')
+        except:
+            break
+    likes = likes[q-1:].translate(str.maketrans('', '', ','))
     #views
     v = st.index('viewCount')
     views = st[v+12:v+24]
